@@ -23,6 +23,7 @@ func cmdList() *cli.Command {
 				return err
 			}
 			fmt.Printf("1Password key %s\n", config.key)
+
 			return nil
 		},
 	}

@@ -1,0 +1,60 @@
+version: "2"
+linters:
+  enable:
+    - bodyclose
+    - depguard
+    - dogsled
+    - dupl
+    - errname
+    - errorlint
+    - funlen
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - godox
+    - gosec
+    - lll
+    - misspell
+    - nakedret
+    - nilerr
+    - nlreturn
+    - prealloc
+    - revive
+    - staticcheck
+    - unconvert
+    - unparam
+    - whitespace
+    - wsl_v5
+  settings:
+    depguard:
+      rules:
+        prevent_unmaintained_packages:
+          list-mode: lax
+          allow:
+            - $gostd
+    wsl_v5:
+      allow-first-in-block: true
+      allow-whole-block: false
+      branch-max-lines: 2
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

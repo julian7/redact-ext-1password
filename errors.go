@@ -9,6 +9,7 @@ var (
 	ErrSecRefTooShort  = errors.New("secret reference too short")
 	ErrSecRefTooLong   = errors.New("secret reference too long")
 	ErrVaultNotFound   = errors.New("vault not found")
+	ErrItemNotFound    = errors.New("item not found")
 	ErrEmptyVault      = errors.New("empty vault")
 	ErrSectionNotFound = errors.New("section not found")
 )
