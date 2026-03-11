@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-No changes so far.
+Changed:
+
+- Updated to 1password-sdk 0.4.0
+
+Added:
+
+- Authenticate with 1Password desktop app
 
 ## [v0.1.0] - Sep 10, 2025
 

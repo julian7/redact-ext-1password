@@ -15,13 +15,17 @@ var DefaultSectionIDStr = "add more"
 var DefaultSectionID = &DefaultSectionIDStr
 
 func newOnepasswordClient(ctx context.Context, cmd *cli.Command) (*onepassword.Client, error) {
+	user := os.Getenv("OP_ACCOUNT_UUID")
 	token := os.Getenv("OP_SERVICE_ACCOUNT_TOKEN")
 
-	client, err := onepassword.NewClient(
-		ctx,
-		onepassword.WithServiceAccountToken(token),
-		onepassword.WithIntegrationInfo(cmd.Root().Name, version),
-	)
+	opts := []onepassword.ClientOption{onepassword.WithIntegrationInfo(cmd.Root().Name, version)}
+	if len(user) > 0 {
+		opts = append(opts, onepassword.WithDesktopAppIntegration(user))
+	} else if len(token) > 0 {
+		opts = append(opts, onepassword.WithServiceAccountToken(token))
+	}
+
+	client, err := onepassword.NewClient(ctx, opts...)
 	if err != nil {
 		return nil, err
 	}
