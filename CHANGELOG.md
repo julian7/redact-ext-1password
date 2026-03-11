@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+No changes so far.
+
+## [v0.2.0] - Mar 11, 2026
+
 Changed:
 
 - Updated to 1password-sdk 0.4.0
@@ -21,3 +25,4 @@ Initial release
 
 [Unreleased]: https://github.com/julian7/redact-ext-1password
 [v0.1.0]: https://github.com/julian7/redact-ext-1password/releases/tag/v0.1.0
+[v0.2.0]: https://github.com/julian7/redact-ext-1password/releases/tag/v0.2.0
